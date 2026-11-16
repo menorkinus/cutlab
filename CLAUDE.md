@@ -17,3 +17,6 @@ PWA tipo CapCut ("CutLab") para móvil y PC. HTML/CSS/JS sin compilación; todo 
 
 ## Estado
 Ver `trabajo/estado-editor.md`.
+
+## Publicación
+- https://menorkinus.github.io/cutlab/ (GitHub Pages, repo público menorkinus/cutlab, rama main). Cada push a main se publica solo en ~1 minuto.
