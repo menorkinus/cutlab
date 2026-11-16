@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#0e0e10">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<title>CutLab</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <header id="top">
+    <b class="logo">CutLab</b>
+    <input id="pname" value="Mi proyecto" aria-label="Nombre del proyecto" maxlength="40">
+    <select id="ratio" aria-label="Formato">
+      <option value="9:16">9:16</option>
+      <option value="16:9">16:9</option>
+      <option value="1:1">1:1</option>
+      <option value="4:5">4:5</option>
+    </select>
+    <span class="sp"></span>
+    <button id="newp" title="Proyecto nuevo">Nuevo</button>
+    <button id="undo" title="Deshacer (Ctrl+Z)">↶</button>
+    <button id="redo" title="Rehacer (Ctrl+Shift+Z)">↷</button>
+    <button id="export" class="primary">Exportar</button>
+  </header>
+
+  <div id="main">
+    <aside id="side">
+      <nav id="tabs">
+        <button data-tab="media">Medios</button>
+        <button data-tab="audio">Audio</button>
+        <button data-tab="text">Texto</button>
+        <button data-tab="fx">Efectos</button>
+        <button data-tab="adjust">Ajustes</button>
+      </nav>
+      <div id="panel"></div>
+    </aside>
+
+    <section id="stage">
+      <div id="cwrap"><canvas id="cv"></canvas></div>
+      <div id="transport">
+        <span id="tcur" class="time">0:00.0</span>
+        <button id="prev" title="Inicio">⏮</button>
+        <button id="play" class="round" title="Reproducir (Espacio)">▶</button>
+        <button id="next" title="Final">⏭</button>
+        <span id="ttot" class="time mut">/ 0:00.0</span>
+      </div>
+    </section>
+  </div>
+
+  <section id="timeline">
+    <div id="tltools">
+      <button id="split" title="Dividir (S)">✂ Dividir</button>
+      <button id="dup" title="Duplicar (Ctrl+D)">⧉</button>
+      <button id="del" title="Eliminar (Supr)">🗑</button>
+      <span class="sp"></span>
+      <button id="zout" title="Alejar">−</button>
+      <button id="zin" title="Acercar">+</button>
+    </div>
+    <div id="tlscroll">
+      <div id="tlinner">
+        <div id="ruler"></div>
+        <div id="tracks"></div>
+        <div id="playhead"></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<div id="modal" hidden></div>
+<div id="toast" hidden></div>
+<input id="file" type="file" multiple accept="video/*,audio/*,image/*" hidden>
+<script src="app.js"></script>
+</body>
+</html>
